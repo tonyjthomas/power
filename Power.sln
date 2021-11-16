@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Power", "Power\Power.fsproj", "{F85D53C1-0FA4-45ED-8DDD-A71CBCCABAFB}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Power.Deploy", "Power.Deploy\Power.Deploy\Power.Deploy.fsproj", "{5C94F3BA-3B04-4E39-B7A5-6ADB971BD59F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F85D53C1-0FA4-45ED-8DDD-A71CBCCABAFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F85D53C1-0FA4-45ED-8DDD-A71CBCCABAFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F85D53C1-0FA4-45ED-8DDD-A71CBCCABAFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F85D53C1-0FA4-45ED-8DDD-A71CBCCABAFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C94F3BA-3B04-4E39-B7A5-6ADB971BD59F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C94F3BA-3B04-4E39-B7A5-6ADB971BD59F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C94F3BA-3B04-4E39-B7A5-6ADB971BD59F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C94F3BA-3B04-4E39-B7A5-6ADB971BD59F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
