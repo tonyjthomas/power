@@ -24,7 +24,7 @@ jobs:
     - name: Package Function
       shell: pwsh
       run: |
-        Compress-Archive -Path .\Power\bin\Debug\net6.0\Publish\* -DestinationPath .\package.zip
+        Compress-Archive -Path .\Power\bin\Debug\net6.0\publish\* -DestinationPath .\package.zip
     - name: Build Deploy
       run: dotnet build ./Power.Deploy --no-restore --configuration Release
     - name: Copy package to Deploy
