@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Power", "Power\Power.fsproj", "{F85D53C1-0FA4-45ED-8DDD-A71CBCCABAFB}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Power.Deploy", "Power.Deploy\Power.Deploy\Power.Deploy.fsproj", "{5C94F3BA-3B04-4E39-B7A5-6ADB971BD59F}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Power.Deploy", "Power.Deploy\Power.Deploy.fsproj", "{5C94F3BA-3B04-4E39-B7A5-6ADB971BD59F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
