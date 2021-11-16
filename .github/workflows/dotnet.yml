@@ -1,0 +1,43 @@
+name: .NET
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 6.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build Function
+      run: dotnet build ./Power --no-restore /p:DeployOnBuild=true /p:DeployTarget=Package;CreatePackageOnPublish=true
+    - name: Package Function
+      shell: pwsh
+      run: |
+        Compress-Archive -Path .\Power\bin\Debug\net6.0\Publish\* -DestinationPath .\package.zip
+    - name: Build Deploy
+      run: dotnet build ./Power.Deploy --no-restore --configuration Release
+    - name: Copy package to Deploy
+      shell: pwsh
+      run: |
+        Copy-Item .\package.zip -Destination .\Power.Deploy\bin\Release\net6.0\package.zip
+    - name: Az login
+      uses: azure/login@v1
+      with:
+        creds: ${{secrets.AZURE_CREDENTIALS}}
+        enable-AzPSSession: true
+    - name: Depoy to Azure
+      env: 
+        RG_NAME: ${{ secrets.RG_NAME }}
+        VM_NAME: ${{ secrets.VM_NAME }}
+      run: dotnet ./Power.Deploy/bin/Release/net6.0/Power.Deploy.dll
