@@ -18,7 +18,7 @@ let getVm =
     let vmName =
         Environment.GetEnvironmentVariable "VM_NAME"
 
-    let credentials = new AzureCliCredential()
+    let credentials = new DefaultAzureCredential()
     let client = new ArmClient(credentials)
 
     task {
