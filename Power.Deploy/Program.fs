@@ -31,7 +31,7 @@ let deployment =
 
 printf "Beginning ARM deployment..."
 
-match deployment |> Deploy.tryExecute rgName [] with
-| Ok _ -> $"Deployment to resource group '{rgName}' completed."
+match deployment |> Deploy.tryExecute resolvedRgName [] with
+| Ok _ -> $"Deployment to completed."
 | Error e -> $"Deployment failed with error: {e}."
 |> printfn "%s"
