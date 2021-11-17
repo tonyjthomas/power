@@ -10,13 +10,16 @@ let rgName = "RG_NAME"
 [<Literal>]
 let vmName = "VM_NAME"
 
+let resolvedRgName = Environment.GetEnvironmentVariable rgName
+let resolvedVmName = Environment.GetEnvironmentVariable vmName
+
 let func =
     functions {
-        name $"func-{rgName}"
-        service_plan_name $"plan-{rgName}"
+        name $"func-{resolvedRgName}"
+        service_plan_name $"plan-{resolvedRgName}"
         system_identity
-        setting rgName (Environment.GetEnvironmentVariable rgName)
-        setting vmName (Environment.GetEnvironmentVariable vmName)
+        setting rgName resolvedRgName
+        setting vmName resolvedVmName
         zip_deploy "package.zip"
     }
 
