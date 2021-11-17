@@ -50,7 +50,7 @@ let stop ([<HttpTrigger(AuthorizationLevel.Function, "post")>] req: HttpRequest)
         OkObjectResult("Ongoing")
 
 [<FunctionName("status")>]
-let status ([<HttpTrigger(AuthorizationLevel.Function, "post")>] req: HttpRequest) (log: ILogger) =
+let status ([<HttpTrigger(AuthorizationLevel.Function, "get")>] req: HttpRequest) (log: ILogger) =
     let vm = getVm.Result
     let view = vm.InstanceView().Value
     OkObjectResult(view.Statuses)
